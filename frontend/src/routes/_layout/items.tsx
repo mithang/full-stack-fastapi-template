@@ -5,6 +5,7 @@ import {
   Heading,
   Table,
   VStack,
+  Checkbox,
 } from "@chakra-ui/react"
 import { useQuery } from "@tanstack/react-query"
 import { createFileRoute, useNavigate } from "@tanstack/react-router"
@@ -88,6 +89,7 @@ function ItemsTable() {
             <Table.ColumnHeader w="sm">ID</Table.ColumnHeader>
             <Table.ColumnHeader w="sm">Title</Table.ColumnHeader>
             <Table.ColumnHeader w="sm">Description</Table.ColumnHeader>
+            <Table.ColumnHeader w="sm">Active</Table.ColumnHeader>
             <Table.ColumnHeader w="sm">Actions</Table.ColumnHeader>
           </Table.Row>
         </Table.Header>
@@ -106,6 +108,16 @@ function ItemsTable() {
                 maxW="30%"
               >
                 {item.description || "N/A"}
+              </Table.Cell>
+              <Table.Cell truncate maxW="sm">
+                <Checkbox.Root
+                  checked={item.active}
+                  // onCheckedChange={(e) => setChecked(!!e.checked)}
+                >
+                  <Checkbox.HiddenInput />
+                  <Checkbox.Control />
+                  <Checkbox.Label>Hoạt động</Checkbox.Label>
+                </Checkbox.Root>
               </Table.Cell>
               <Table.Cell>
                 <ItemActionsMenu item={item} />

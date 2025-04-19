@@ -1,0 +1,18 @@
+
+BE:
+1. cai dat uv
+2. uv sync
+3. source .venv/bin/activate
+4. alembic upgrade head
+5. run file :backend_pre_start.py
+6. run file :initial_data.py
+7. fastapi run --reload app/main.py
+
+
+FE:
+npm install
+npm run dev
+
+Docker: docker compose up
+
+DB: chay bat ky docker tao postgres
