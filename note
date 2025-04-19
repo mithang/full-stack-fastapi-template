@@ -7,6 +7,7 @@ BE:
 5. run file :backend_pre_start.py
 6. run file :initial_data.py
 7. fastapi run --reload app/main.py
+8. cai thu vien moi chi can chep vao pyproject.toml, sau do chay lenh: uv sync
 
 
 FE:
